@@ -75,6 +75,7 @@ class CHDriver implements IDriver {
 
 
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
         options.addArguments("disable-popup-blocking");
         options.addArguments("--allow-running-insecure-content");
         options.addArguments("disable-extensions");

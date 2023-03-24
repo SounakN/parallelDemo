@@ -9,14 +9,7 @@ public class BasicConstants {
 	public static final int FIREFOX_PAGE_LOAD_TIME_OUT = 120;
 	public static final int IMPLICIT_WAIT_TIMEOUT = 60;
 	public static final int EXPLICIT_WAIT_TIMEOUT = 30;
-	public static final int POLLIMG_WAIT_TIMEOUT = 10;
-	public static final int APPIUM_COMMAND_TIMEOUT = 300;
-	public static final String moduleTooltipText="The estimate is for this individual course and is inclusive of time taken for submissions.";
-	public static final String reportAnErrorText="This is for testing report an error feature.";
-	public static final String successfulMessage="Thank you! The issue has been reported";
 
-	public static final String PageTitleLogin = "upGrad | Online Courses & Education Programs for Professionals";
-	public static final String LogoTitle = "upGrad";
 	public static String isMaximized = (System.getProperty("isMaximized")!=null)?System.getProperty("isMaximized"): EnvUtil.getProperties().getProperty("isMaximized");
 	public static String incognito = (System.getProperty("incognito")!=null)?System.getProperty("incognito"):EnvUtil.getProperties().getProperty("incognito");
 	public static String headless = (System.getProperty("headless")!=null)?System.getProperty("headless"):EnvUtil.getProperties().getProperty("headless");

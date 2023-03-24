@@ -1,6 +1,6 @@
 package utilities;
 
-import TestDataModels.BaseReaderModel;
+import testDataModels.BaseReaderModel;
 import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

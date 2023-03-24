@@ -1,4 +1,4 @@
-package TestDataModels;
+package testDataModels;
 
 import lombok.Getter;
 import lombok.Setter;
