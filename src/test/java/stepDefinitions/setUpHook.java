@@ -1,15 +1,12 @@
 package stepDefinitions;
 
-import driver.BasicConstants;
 import driver.WebBrowserFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.junit.jupiter.api.TestInstance;
 import pageactions.PageObjectInitialization;
 import utilities.EnvUtil;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class setUpHook extends WebBrowserFactory{
     private WebBrowserFactory webBrowserFactory;
     private PageObjectInitialization pageObjectInitialization;

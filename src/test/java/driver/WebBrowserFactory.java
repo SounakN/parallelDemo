@@ -16,7 +16,7 @@ public class WebBrowserFactory {
     public static void setBrowserType(String BrowserType) throws Exception {
 
         BrowserDriver = Browsers.get(BrowserType);
-        if (null == DriverService) {
+        /*if (null == DriverService) {*/
             switch (BrowserDriver) {
 
                 case CHROME:
@@ -33,7 +33,7 @@ public class WebBrowserFactory {
                 default:
                     break;
             }
-        }
+        /*}*/
 
         driver.set(DriverService.get());
     }
@@ -44,7 +44,7 @@ public class WebBrowserFactory {
 
     // To stop the driver
     public void quit() throws Exception {
-      /*  getDriver().quit();*/
-        DriverService.stopDriver();
+        getDriver().quit();
+        /*DriverService.stopDriver();*/
     }
 }

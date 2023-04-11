@@ -12,14 +12,14 @@ public class MyStepdefs {
         this.pageObjectInitialization = pageObjectInitialization;
     }
 
-    @Given("user types {string}")
+    @Given("user types {string} for amazon")
     public void userTypes(String url) throws InterruptedException {
         pageObjectInitialization.testPageActions.goToUrl(url);
     }
 
-    @Then("Searches for {string} in {string}")
-    public void searchesForIn(String toType, String type) throws InterruptedException {
-        pageObjectInitialization.testPageActions.findSearchBar(toType,type);
-    }
 
+    @Then("Searches for {string} in Amazon")
+    public void searchesForInAmazon(String toType) throws InterruptedException {
+        pageObjectInitialization.testPageActions.findSearchBar(toType);
+    }
 }

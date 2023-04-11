@@ -1,13 +1,13 @@
 package pageactions;
 
 import driver.WebBrowserFactory;
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class TestPageActions2 extends ParentPageActions {
     public WebBrowserFactory webBrowserFactory = null;
-    private String googleSearchOutcome_loc = "//span[text()='Steven Wilson']";
+    private String flipkart_Outcome = "//span[text()='Filters']";
     private String amazonSearchOutcome_loc = "//span[contains(text(),'iPhone')]";
 
     public TestPageActions2(WebBrowserFactory browserFactory) {
@@ -17,13 +17,13 @@ public class TestPageActions2 extends ParentPageActions {
 
     public void validateOnNextPage(String type){
         WebElement validatePresence_elem = null;
-        if(type.equals("Google")){
-            validatePresence_elem = webBrowserFactory.getDriver().findElement(By.xpath(googleSearchOutcome_loc));
+        if(type.equals("Flipkart")){
+            validatePresence_elem = webBrowserFactory.getDriver().findElement(By.xpath(flipkart_Outcome));
         }else{
             validatePresence_elem = webBrowserFactory.getDriver().findElement(By.xpath(amazonSearchOutcome_loc));
         }
-        Assertions.assertNotNull(validatePresence_elem);
-        Assertions.assertTrue(validatePresence_elem.isDisplayed());
+        Assertions.assertThat(validatePresence_elem).isNotNull();
+        Assertions.assertThat(validatePresence_elem.isDisplayed()).isTrue();
     }
 
 }
