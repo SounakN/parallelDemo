@@ -18,13 +18,13 @@ public class TestPageActions3 extends ParentPageActions {
     public TestPageActions3(WebBrowserFactory browserFactory) {
         super(browserFactory);
         this.webBrowserFactory = browserFactory;
-        wait = new WebDriverWait(webBrowserFactory.getDriver(), Duration.ofSeconds(10));
+        wait = new WebDriverWait(webBrowserFactory.getDriverService(), Duration.ofSeconds(10));
     }
     public void goToUrl(String url) throws InterruptedException {
-        webBrowserFactory.getDriver().get(url);
+        webBrowserFactory.getDriverService().get(url);
     }
     public void checkForModal(){
-        WebElement modal = webBrowserFactory.getDriver().findElement(By.xpath(flipkart_Modal_cross));
+        WebElement modal = webBrowserFactory.getDriverService().findElement(By.xpath(flipkart_Modal_cross));
         wait.until(ExpectedConditions.elementToBeClickable(modal));
         modal.click();
     }
@@ -32,7 +32,7 @@ public class TestPageActions3 extends ParentPageActions {
     public void findSearchBar(String toType) throws InterruptedException {
         WebElement searchBar_elem = null;
 
-        searchBar_elem = webBrowserFactory.getDriver().findElement(By.xpath(flipkart_SearchBar));
+        searchBar_elem = webBrowserFactory.getDriverService().findElement(By.xpath(flipkart_SearchBar));
 
 
         wait.until(ExpectedConditions.elementToBeClickable(searchBar_elem));

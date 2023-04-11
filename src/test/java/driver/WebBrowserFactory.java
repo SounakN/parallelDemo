@@ -10,10 +10,9 @@ public class WebBrowserFactory {
 
     public static ThreadLocal<IDriver> DriverService = new ThreadLocal<>();
     private static Browsers BrowserDriver;
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     // To set the browser type through a Singleton Methodology
-    public static void setBrowserType(String BrowserType) throws Exception {
+    public  void setBrowserType(String BrowserType) throws Exception {
 
         BrowserDriver = Browsers.get(BrowserType);
         if(DriverService.get()==null){
@@ -38,13 +37,11 @@ public class WebBrowserFactory {
         }else{
             System.out.print("Thread id :: "+Thread.currentThread().getId()+" DIDNOT got in to the block");
         }
-
-        driver.set(DriverService.get().get());
     }
 
-    public synchronized WebDriver getDriver() {
+    /*public synchronized WebDriver getDriver() {
         return driver.get();
-    }
+    }*/
     public synchronized WebDriver getDriverService() {
         return DriverService.get().get();
     }

@@ -20,7 +20,7 @@ public class TestPageActions2 extends ParentPageActions {
         if(type.equals("Flipkart")){
             validatePresence_elem = webBrowserFactory.getDriverService().findElement(By.xpath(flipkart_Outcome));
         }else{
-            validatePresence_elem = webBrowserFactory.getDriver().findElement(By.xpath(amazonSearchOutcome_loc));
+            validatePresence_elem = webBrowserFactory.getDriverService().findElement(By.xpath(amazonSearchOutcome_loc));
         }
         Assertions.assertThat(validatePresence_elem).isNotNull();
         Assertions.assertThat(validatePresence_elem.isDisplayed()).isTrue();

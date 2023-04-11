@@ -19,13 +19,13 @@ public class TestPageActions extends ParentPageActions {
     }
 
     public void goToUrl(String url) throws InterruptedException {
-        webBrowserFactory.getDriver().get(url);
+        webBrowserFactory.getDriverService().get(url);
     }
 
     public void findSearchBar(String toType) throws InterruptedException {
         WebElement searchBar_elem = null;
-        searchBar_elem = webBrowserFactory.getDriver().findElement(By.xpath(amazonSearchBar_loc));
-        WebDriverWait wait = new WebDriverWait(webBrowserFactory.getDriver(), Duration.ofSeconds(10));
+        searchBar_elem = webBrowserFactory.getDriverService().findElement(By.xpath(amazonSearchBar_loc));
+        WebDriverWait wait = new WebDriverWait(webBrowserFactory.getDriverService(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(searchBar_elem));
         searchBar_elem.sendKeys(toType);
         searchBar_elem.sendKeys(Keys.ENTER);
