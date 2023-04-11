@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 public interface IDriver {
 	void startDriver() throws Exception;
 	void stopDriver() throws Exception;
-	WebDriver get() throws Exception;
+	WebDriver get();
 
 	void setOptions() throws MalformedURLException;
 

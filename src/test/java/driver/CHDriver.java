@@ -145,7 +145,7 @@ class CHDriver implements IDriver {
     }
 
     // To stop the driver
-    public void stopDriver() throws Exception {
+    public void stopDriver() {
         try {
             driver.quit();
         } catch (Exception e) {

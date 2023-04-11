@@ -8,7 +8,7 @@ public class WebBrowserFactory {
 
     ;
 
-    public static IDriver DriverService = null;
+    public static ThreadLocal<IDriver> DriverService = new ThreadLocal<>();
     private static Browsers BrowserDriver;
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
@@ -16,35 +16,42 @@ public class WebBrowserFactory {
     public static void setBrowserType(String BrowserType) throws Exception {
 
         BrowserDriver = Browsers.get(BrowserType);
-        /*if (null == DriverService) {*/
+        if(DriverService.get()==null){
+            System.out.print("Thread id :: "+Thread.currentThread().getId()+" got in to the block");
             switch (BrowserDriver) {
 
                 case CHROME:
-                    DriverService = new CHDriver();
+                    DriverService.set(new CHDriver());
                     break;
 
                 case FIREFOX:
-                    DriverService = new FFDriver();
+                    DriverService.set(new FFDriver());
                     break;
 
                 case EDGE:
-                    DriverService = new EDGEDriver();
+                    DriverService.set(new EDGEDriver());
                     break;
                 default:
                     break;
             }
-        /*}*/
 
-        driver.set(DriverService.get());
+        }else{
+            System.out.print("Thread id :: "+Thread.currentThread().getId()+" DIDNOT got in to the block");
+        }
+
+        driver.set(DriverService.get().get());
     }
 
     public synchronized WebDriver getDriver() {
         return driver.get();
     }
+    public synchronized WebDriver getDriverService() {
+        return DriverService.get().get();
+    }
 
     // To stop the driver
     public void quit() throws Exception {
-        getDriver().quit();
-        /*DriverService.stopDriver();*/
+        /*getDriver().quit();*/
+        DriverService.get().stopDriver();
     }
 }

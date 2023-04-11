@@ -18,7 +18,7 @@ public class TestPageActions2 extends ParentPageActions {
     public void validateOnNextPage(String type){
         WebElement validatePresence_elem = null;
         if(type.equals("Flipkart")){
-            validatePresence_elem = webBrowserFactory.getDriver().findElement(By.xpath(flipkart_Outcome));
+            validatePresence_elem = webBrowserFactory.getDriverService().findElement(By.xpath(flipkart_Outcome));
         }else{
             validatePresence_elem = webBrowserFactory.getDriver().findElement(By.xpath(amazonSearchOutcome_loc));
         }
