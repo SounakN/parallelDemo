@@ -9,6 +9,7 @@ public class MyStepdefs {
 
     PageObjectInitialization pageObjectInitialization = null;
     public MyStepdefs(PageObjectInitialization pageObjectInitialization) {
+        System.out.println("Thread ID :: "+Thread.currentThread().getId()+" the number is "+pageObjectInitialization.toString());
         this.pageObjectInitialization = pageObjectInitialization;
     }
 

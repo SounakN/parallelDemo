@@ -17,7 +17,6 @@ public class setUpHook extends WebBrowserFactory{
 
     @Before
     public void Initiation(Scenario sc) throws Exception {
-        /*System.out.println(webBrowserFactory.getDriverService());*/
         EnvUtil.loadProperties("QA");
         System.out.println(sc.getName() + " is being running at :: "+ Thread.currentThread().getId());
         PageObjectInitialization.initializeObjects(webBrowserFactory);

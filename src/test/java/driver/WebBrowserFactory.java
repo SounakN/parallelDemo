@@ -18,7 +18,6 @@ public class WebBrowserFactory {
         if(DriverService.get()==null){
             System.out.print("Thread id :: "+Thread.currentThread().getId()+" got in to the block");
             switch (BrowserDriver) {
-
                 case CHROME:
                     DriverService.set(new CHDriver());
                     break;
@@ -39,9 +38,6 @@ public class WebBrowserFactory {
         }
     }
 
-    /*public synchronized WebDriver getDriver() {
-        return driver.get();
-    }*/
     public synchronized WebDriver getDriverService() {
         return DriverService.get().get();
     }

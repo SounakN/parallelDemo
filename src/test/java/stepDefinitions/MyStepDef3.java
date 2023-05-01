@@ -8,6 +8,7 @@ import pageactions.PageObjectInitialization;
 public class MyStepDef3 {
     PageObjectInitialization pageObjectInitialization = null;
     public MyStepDef3(PageObjectInitialization pageObjectInitialization) {
+        System.out.println("Thread ID :: "+Thread.currentThread().getId()+" the number is "+pageObjectInitialization.toString());
         this.pageObjectInitialization = pageObjectInitialization;
     }
 
